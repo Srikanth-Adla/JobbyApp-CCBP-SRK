@@ -168,7 +168,6 @@ class Jobs extends Component {
 
   profileFailure = () => (
     <div className="profile-failure-container">
-      <h1 className="failure-profile-heading">Profile Fail</h1>
       <button
         className="profile-retry-button"
         onClick={this.getProfileData}
@@ -364,6 +363,24 @@ class Jobs extends Component {
         <Header />
         <div className="jobs-lg-responsive-container">
           <div className="apply-filters-container">
+            <div className="search-small-item-container">
+              <input
+                type="search"
+                placeholder="Search"
+                className="input-element"
+                onChange={this.onChangeInput}
+                value={inputValue}
+                onKeyDown={this.onKeyDownInput}
+              />
+              <button
+                data-testid="searchButton"
+                type="button"
+                onClick={this.onClickSearchInputButton}
+                className="button-search-input"
+              >
+                <BsSearch className="search-button" />
+              </button>
+            </div>
             {this.renderProfileView()}
             <hr className="horizantal-line" />
             {this.renderEmployementType()}
